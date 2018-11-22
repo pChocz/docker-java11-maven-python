@@ -1,4 +1,4 @@
-# Ubuntu 18.04
+# Ubuntu 18.04 LTS
 # Oracle Java 11.0.1+13 64 bit
 # Maven 3.6.0
 # Python 3
