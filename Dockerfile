@@ -29,10 +29,11 @@ RUN ln -s /opt/maven/bin/mvn /usr/local/bin
 RUN rm -f /tmp/apache-maven-3.6.0.tar.gz
 ENV MAVEN_HOME /opt/maven
 
+# install JDK
+RUN apt-get install -y default-jdk
+RUN java -version
+
 # remove download archive files
 RUN apt-get clean
-
-# install JDK
-RUN apt-get install default-jdk
 
 CMD [""]
