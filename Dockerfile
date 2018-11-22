@@ -1,7 +1,8 @@
 # Ubuntu 18.04 LTS
-# Oracle Java 11.0.1+13 64 bit
+# OpenJDK most recent version ("10.0.2" as for November 2018)
 # Maven 3.6.0
 # Python 3
+# Anybadge
 
 FROM ubuntu:18.04
 
@@ -32,6 +33,19 @@ ENV MAVEN_HOME /opt/maven
 # install JDK
 RUN apt-get install -y openjdk-11-jdk
 RUN java -version
+
+# install python
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt update
+RUN apt -y install python3.6
+RUN apt-get -y install python3-pip
+
+# remove download archive files
+RUN apt-get clean
+
+# install anybadge
+RUN pip3 install anybadge
 
 # remove download archive files
 RUN apt-get clean
