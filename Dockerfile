@@ -41,11 +41,16 @@ RUN apt update
 RUN apt -y install python3.6
 RUN apt-get -y install python3-pip
 
+# install xmllint
+RUN apt-get -y install libxml2-utils
+
 # remove download archive files
 RUN apt-get clean
 
 # install anybadge
 RUN pip3 install anybadge
+
+
 
 # remove download archive files
 RUN apt-get clean
