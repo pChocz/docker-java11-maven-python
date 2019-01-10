@@ -41,6 +41,9 @@ RUN apt update
 RUN apt -y install python3.6
 RUN apt-get -y install python3-pip
 
+# install bc (bash calculator)
+RUN apt-get -y install bc
+
 # install xmllint
 RUN apt-get -y install libxml2-utils
 
