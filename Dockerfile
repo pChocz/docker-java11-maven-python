@@ -33,8 +33,8 @@ ENV MAVEN_HOME /opt/maven
 # install JDK
 RUN add-apt-repository ppa:linuxuprising/java
 RUN apt update
-RUN apt install oracle-java11-installer
-RUN apt install oracle-java11-set-default
+RUN apt -y install oracle-java11-installer
+RUN apt -y install oracle-java11-set-default
 RUN java -version
 
 # install python
