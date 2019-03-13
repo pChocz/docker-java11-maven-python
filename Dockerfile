@@ -30,8 +30,11 @@ RUN ln -s /opt/maven/bin/mvn /usr/local/bin
 RUN rm -f /tmp/apache-maven-3.6.0.tar.gz
 ENV MAVEN_HOME /opt/maven
 
-# install JDK 
-RUN apt-get install -y openjdk-11-jdk
+# install JDK
+RUN add-apt-repository ppa:linuxuprising/java
+RUN apt update
+RUN apt install oracle-java11-installer
+RUN apt install oracle-java11-set-default
 RUN java -version
 
 # install python
