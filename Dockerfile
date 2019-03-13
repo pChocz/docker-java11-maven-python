@@ -17,6 +17,9 @@ RUN apt-get update
 # install wget
 RUN apt-get install -y wget
 
+# install GnuPG 2.0
+RUN apt-get install -y gnupg2
+
 # get maven 3.3.9
 RUN wget --no-verbose -O /tmp/apache-maven-3.6.0.tar.gz http://archive.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
 
