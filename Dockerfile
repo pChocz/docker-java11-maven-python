@@ -31,9 +31,10 @@ RUN rm -f /tmp/apache-maven-3.6.0.tar.gz
 ENV MAVEN_HOME /opt/maven
 
 # install JDK
-RUN add-apt-repository ppa:linuxuprising/java
-RUN apt update
-RUN apt -y install oracle-java11-installer
+RUN echo "deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main" | tee /etc/apt/sources.list.d/linuxuprising-java.list
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 73C3DB2A
+RUN apt-get update
+RUN echo oracle-java11-installer shared/accepted-oracle-license-v1-2 select true | sudo /usr/bin/debconf-set-selections
 RUN apt -y install oracle-java11-set-default
 RUN java -version
 
